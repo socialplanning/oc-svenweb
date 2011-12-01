@@ -1,0 +1,23 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:browser="http://namespaces.zope.org/browser"
+           xmlns:opencore="http://namespaces.openplans.org/opencore"
+           >
+
+  <browser:page
+     class="opencore.browser.naming.ProjectDummy"
+     for="opencore.interfaces.IProject"
+     permission="zope2.View"
+     name="wikis"
+     />
+
+  <opencore:menuitem
+     name="Wikis"
+     filter="opencore.browser.topnav.viewlet.contained_within"
+     container="opencore.svenweb.interfaces.ISvenwebFeatureletInstalled"
+     item_url="wikis"
+     sort_order="42"
+     selected="opencore.browser.topnav.viewlet.is_in_external_application"
+     application_header="svenweb"
+     />
+
+</configure>
