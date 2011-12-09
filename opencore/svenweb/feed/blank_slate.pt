@@ -1,0 +1,25 @@
+<!-- project member blank slate -->
+<div tal:condition="context/isProjectMember"
+     id="oc-feed-svenweb" class="oc-widget oc-widget-feed oc-column">
+  <h2 class="oc-feed-title">
+    <a tal:attributes="href view/feed/link" i18n:translate="">Wikis</a>
+  </h2>	
+  <div class="oc-blankSlate">
+    <img src="/++resource++img/summaryicons/wiki.gif" />
+    <p i18n:translate="">
+    Use extra wikis to collaboratively manage information with your team, 
+    sub-groups or the world.
+    </p>
+    <p><a href="./wikis/"
+          i18n:translate="">Start a Wiki</a></p>
+  </div>
+</div>
+
+<!-- non-project member blank slate -->
+<div tal:condition="not:context/isProjectMember"
+     id="oc-feed-svenweb" class="oc-widget oc-widget-feed oc-column">
+  <h2 class="oc-feed-title">
+    <a href="./wikis/">Wikis</a>     
+  </h2>
+  <span i18n:translate="">Collaborate with wikis</span>
+</div>

@@ -9,5 +9,6 @@
 
    <!-- @@ viewlet reg -->
    <include package=".browser" />
+   <include package=".feed" />
 
 </configure>
