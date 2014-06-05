@@ -24,7 +24,7 @@ class SvenwebSummaryViewlet(BlankSlateViewlet):
     template = ZopeTwoPageTemplateFile(template)
     adapter_name = 'svenweb'
 
-    sort_order = 101
+    sort_order = 502
 
     def is_blank(self):
         return not hasattr(self, 'feed') or not self.feed.items
@@ -59,7 +59,7 @@ class SvenwebFeedAdapter(BaseFeedAdapter):
             req.add_header('Cookie', cookie)
         try:
             feed = urllib2.urlopen(req).read()
-        except urllib2.HTTPError:
+        except (urllib2.HTTPError, urllib2.URLError):
             # fail silently for now
             feed = ''
 
